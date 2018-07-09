@@ -1,0 +1,39 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" routerlink="/">
+    <img src="../../../assets/images/LogoMobile.png" width="30" height="30" alt="logo">
+  </a>
+  <a class="navbar-brand" href="#">Mobile Zone</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <span class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          style="cursor: pointer;">
+          Categories
+        </span>
+        <div class="dropdown-menu scroll" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngFor="let x of category_head">
+            <strong>{{x}}</strong>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      <!-- <a [routerLink]="['/account']" class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#loginModal"><i class="fa fa-user" aria-hidden="true"></i>Login</a> -->
+      <!-- <a [routerLink]="['/account']" class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#loginModal"><i class="fa fa-sign-out" aria-hidden="true"></i>SignUp</a> -->
+      <a [routerLink]="['/account','login']" class="nav-anchor" (click)="setDiv(true)">
+        <i class="fa fa-user" aria-hidden="true"></i>Log In</a>
+      <a [routerLink]="['/account','signup']" class="nav-anchor" (click)="setDiv(true)">
+        <i class="fa fa-user" aria-hidden="true"></i>Sign Up</a>
+    </span>
+  </div>
+</nav>

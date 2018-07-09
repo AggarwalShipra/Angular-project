@@ -1,0 +1,26 @@
+.logbutton
+{
+background-color: #202224;
+color:white;
+width: 100%;
+font-size: 20px;
+margin-top: 4px;
+margin-top: 1rem;
+font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+}
+.logbutton:hover
+{
+background-color: #000000;
+color:white;
+}
+.fa{ 
+    margin: 0 5px;
+}
+/* #infocircle
+{
+    float: right;
+} */
+#passwordLabel
+{
+    margin-top: 0.5rem;
+}

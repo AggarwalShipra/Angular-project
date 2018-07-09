@@ -1,0 +1,29 @@
+#searchBox{
+    width: 100%;
+}
+.nav-anchor
+{
+    padding-right: .5rem;
+    padding-left: .5rem;
+    text-decoration: none;
+}
+.fa
+{
+    padding-right: 0.125rem;
+}
+.scroll{
+    overflow-y: scroll;
+    height: auto;
+    max-height: 200px;
+}
+.navbar-text a{
+    color:rgba(255,255,255,.5);
+}
+
+.navbar-text a:hover{
+    color:rgba(255,255,255,.8);
+}
+
+.navbar-text a:active{
+    color:rgba(255,255,255);
+}

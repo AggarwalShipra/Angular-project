@@ -1,0 +1,23 @@
+<div class="container" id="pop" *ngIf="showdiv()">
+  <div class="container" id="pop">
+    <div class="popup">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 content">
+        <div id="content-child">
+          <!-- <button type="button" class="close" style="color: aliceblue;">&times;</button> -->
+          <button type="button" class="close" style="color: aliceblue;" (click)="setdiv(false)">&times;</button>          
+          <img id="logo" src="../../assets/images/MobileLogoName.png" alt="An Image">
+          <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+              <a class="nav-link anchor" [routerLink]="['/account','login']" routerLinkActive="active">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link anchor" [routerLink]="['/account','signup']" routerLinkActive="active">Sign Up</a>
+            </li>
+          </ul>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

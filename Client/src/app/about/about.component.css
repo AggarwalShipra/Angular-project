@@ -1,0 +1,41 @@
+@media screen and (max-height: 600px)
+{
+.gallery-view {
+    max-height: 281px;
+}
+}
+.gallery-view{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: #333;
+    height:400px;
+}
+.container-fluid{       
+    text-align: center;
+    padding-left:0;
+    padding-right:0;
+}
+.image-title
+{
+    color: aliceblue;
+    text-transform: uppercase;
+    font-weight: 350;
+    font-size: 40px;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+#heading
+{
+    font-family: "Verdana, Geneva, Tahoma, sans-serif";
+    padding: 30px;
+    font-size: 30px;
+}
+#content
+{
+    font-family: "Verdana, Geneva, Tahoma, sans-serif";
+}
