@@ -1,0 +1,39 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+.container
+{
+    margin-top: 10px; 
+}
+.card{
+    border-radius: 0;
+}
+.card:hover{
+    box-shadow: 1px 1px 1px 1px #ccc; 
+}
+.card-img-top
+{
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+}
+.card-title
+  {
+        line-height: 2;
+        width : 100%;
+        overflow:hidden;
+        /* display:inline-block; */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+  }
+  .column
+  {
+      padding:0;
+  }
+  #top-heading
+  {
+      margin-left: -15px;
+      margin-bottom: 20px;
+      color: rgb(102, 99, 99);
+  }

@@ -1,0 +1,105 @@
+<div class="col-12 col-sm-7 col-md-8 offset-sm-3 offset-md-2">
+  <div class="d-block d-sm-none">
+    <div class="toggler">
+        <a role="button" data-toggle="collapse" data-target="#togglenav" aria-expanded="false" class="nav-link toggle" aria-controls="togglenav">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+    </div>
+  </div>
+<div id="togglenav" class="collapse show" aria-labelledby="NavBar" data-parent="#accordion">
+<nav class="col-md-2 col-sm-3 col-6 d-block bg-dark sidebar">
+  <div class="sidebar-sticky">
+      <div class="d-block d-sm-none">
+          <div class="toggler">
+              <a role="button" data-toggle="collapse" data-target="#togglenav" aria-expanded="false" class="nav-link back" aria-controls="togglenav">
+                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              </a>
+          </div>
+        </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a role="button" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" class="nav-link" aria-controls="collapseProduct">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          Product
+        </a>
+        <div id="collapseProduct" class="sub collapse" aria-labelledby="Product" data-parent="#accordion">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Add Product
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              Delete Product
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-upload" aria-hidden="true"></i>
+              Update product Information
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-database" aria-hidden="true"></i>
+              Update Product Stock
+            </a>
+          </li>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a role="button" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" class="nav-link" aria-controls="collapseUser">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          User
+        </a>
+        <div id="collapseUser" class="sub collapse" aria-labelledby="User" data-parent="#accordion">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-info" aria-hidden="true"></i>
+              User Information
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i>
+              User Bill History
+            </a>
+          </li>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a role="button" data-toggle="collapse" data-target="#collapseBill" aria-expanded="false" class="nav-link" aria-controls="collapseBill">
+          <i class="fa fa-clone" aria-hidden="true"></i>
+          Bill
+        </a>
+        <div id="collapseBill" class="sub collapse" aria-labelledby="Bill" data-parent="#accordion">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i>
+              Bill History
+            </a>
+          </li>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="addProduct" routerLinkActive="active">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          Account Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+</div>

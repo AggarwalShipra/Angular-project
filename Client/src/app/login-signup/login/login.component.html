@@ -1,11 +1,27 @@
-<div class="form-group">
-  <label for="exampleInputEmail1">Email address</label>
-  <a data-toggle="tooltip" data-placement="up" title="Enter the email address you used at the time of sign up.">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <span class="form-text" *ngIf="haveError">{{error}}</span>
+    <label for="exampleInputEmail1">Email address</label>
+    <a data-toggle="tooltip" data-placement="up" title="Enter the email address you used at the time of sign up.">
       <i class="fa fa-info-circle" aria-hidden="true" id="infocircle"></i>
-  </a>
-  <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
-  <label for="loginPassword" id="passwordLabel">Password</label>
-  <input type="password" class="form-control" id="passwordLogin" placeholder="Password">
-    <button type="submit" class="btn logbutton">
+    </a>
+    <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+    <span *ngIf="!loginForm.get('email').valid&&loginForm.get('email').dirty" class="form-text">
+      <span *ngIf="loginForm.get('email').errors['email']">
+        Please enter Valid Email!
+      </span>
+      <span *ngIf="loginForm.get('email').errors['required']">
+        This field is required!
+      </span>
+    </span>
+    <label for="loginPassword" id="passwordLabel">Password</label>
+    <input type="password" class="form-control" id="passwordLogin" placeholder="Password" formControlName="password">
+    <span *ngIf="loginForm.get('password').dirty">
+      <span *ngIf="loginForm.get('password').errors!=null && loginForm.get('password').errors['required']">
+        Password field is required.
+      </span>
+    </span>
+    <button type="submit" class="btn logbutton" [disabled]="!loginForm.valid">
       <i class="fa fa-lock" aria-hidden="true"></i>Log In Securely</button>
-</div>
+  </div>
+</form>

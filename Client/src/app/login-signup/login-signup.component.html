@@ -1,21 +1,25 @@
-<div class="container" id="pop" *ngIf="showdiv()">
-  <div class="container" id="pop">
-    <div class="popup">
-    <div class="row">
-      <div class="col-md-8 offset-md-2 content">
-        <div id="content-child">
-          <!-- <button type="button" class="close" style="color: aliceblue;">&times;</button> -->
-          <button type="button" class="close" style="color: aliceblue;" (click)="setdiv(false)">&times;</button>          
-          <img id="logo" src="../../assets/images/MobileLogoName.png" alt="An Image">
-          <ul class="nav nav-tabs nav-fill">
-            <li class="nav-item">
-              <a class="nav-link anchor" [routerLink]="['/account','login']" routerLinkActive="active">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link anchor" [routerLink]="['/account','signup']" routerLinkActive="active">Sign Up</a>
-            </li>
-          </ul>
-          <router-outlet></router-outlet>
+<!-- Modal -->
+<div class="modal fade" id="LoginSignupModal" tabindex="-1" role="dialog" aria-labelledby="LoginSignupModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true">Login</a>
+          <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signuo"
+            aria-selected="false">Signup</a>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+            <app-login></app-login>
+          </div>
+          <div class="tab-pane" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+            <app-signup></app-signup>
+          </div>
         </div>
       </div>
     </div>

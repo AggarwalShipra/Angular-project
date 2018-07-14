@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
@@ -12,14 +12,13 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-const appRoutes:Routes=[
-  {path:"",component:HomeComponent},
-  {path:"about",component:AboutComponent},
-  {path:"account",component:LoginSignupComponent,children:[
-    {path:"login",component:LoginComponent},
-    {path:"signup",component:SignupComponent}
-  ]}
-];
+import { ProductDashboardComponent } from './product/product-dashboard/product-dashboard.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductDetail2Component } from './product/product-detail2/product-detail2.component';
+import { UserService } from './Services/user.service';
+import { AdminComponent } from './admin/admin.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +30,20 @@ const appRoutes:Routes=[
     CarouselComponent,
     HeaderComponent,
     AboutComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductDashboardComponent,
+    ProductDetailComponent,
+    ProductDetail2Component,
+    AdminComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  providers: [],
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  AppRoutingModule],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

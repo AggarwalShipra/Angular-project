@@ -1,0 +1,25 @@
+export class Product
+{
+    _id?:string;
+    model_name:string;
+    company:string;
+    image:string;
+    stock:number;
+    screen_size:number;
+    ram:number;
+    rom:number;
+    memory:number;
+    front_camera:number;
+    back_camera:number
+    battery:string;
+    battery_type:boolean;
+    two_g:boolean;
+    three_g:boolean;
+    four_g:boolean;
+    wifi:boolean;
+    usb:boolean;
+    music:boolean;
+    video:boolean;
+    fm:boolean;
+    desc:string;
+}

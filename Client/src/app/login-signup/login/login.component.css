@@ -16,11 +16,19 @@ color:white;
 .fa{ 
     margin: 0 5px;
 }
-/* #infocircle
-{
-    float: right;
-} */
 #passwordLabel
 {
     margin-top: 0.5rem;
+}
+input.ng-invalid.ng-dirty
+{
+border:2px solid rgb(245, 128, 128);
+}
+button:disabled:hover
+{
+    cursor: not-allowed;
+}
+.form-text
+{
+    color:rgb(245, 128, 128);
 }

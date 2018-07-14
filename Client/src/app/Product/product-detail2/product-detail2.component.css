@@ -1,0 +1,43 @@
+a{
+    cursor: pointer;
+}
+.fa
+{
+    margin-right: 10px;
+    font-size: 10px;
+}
+h6{
+    font-weight: normal;
+}
+.nav-link.active
+{
+    border-bottom-width: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color:#fff #fff #343a40;
+}
+.nav-item 
+{
+    color:black;
+}
+.details
+{
+    padding: 5px;
+    width: 100%;
+    /* border: 1px solid #ccc; */
+}
+.bottom-part
+{
+    margin: 5px auto;
+    background-color: #fff;
+}
+.sub-detail
+{
+    border-bottom: 1px dashed #ccc;
+    padding:5px 0;
+}
+.detail-heading
+{
+    border-bottom: 1px dashed #ccc;
+    padding: 5px 0;
+}

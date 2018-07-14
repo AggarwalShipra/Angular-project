@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <a class="navbar-brand" routerlink="/">
     <img src="../../../assets/images/LogoMobile.png" width="30" height="30" alt="logo">
   </a>
@@ -28,12 +28,9 @@
       </li>
     </ul>
     <span class="navbar-text">
-      <!-- <a [routerLink]="['/account']" class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#loginModal"><i class="fa fa-user" aria-hidden="true"></i>Login</a> -->
-      <!-- <a [routerLink]="['/account']" class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#loginModal"><i class="fa fa-sign-out" aria-hidden="true"></i>SignUp</a> -->
-      <a [routerLink]="['/account','login']" class="nav-anchor" (click)="setDiv(true)">
-        <i class="fa fa-user" aria-hidden="true"></i>Log In</a>
-      <a [routerLink]="['/account','signup']" class="nav-anchor" (click)="setDiv(true)">
-        <i class="fa fa-user" aria-hidden="true"></i>Sign Up</a>
+      <a href="#" class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#LoginSignupModal">
+          <i class="fa fa-lg fa-smile-o" aria-hidden="true"></i>Login/Signup</a>
     </span>
   </div>
 </nav>
+<app-login-signup></app-login-signup>
