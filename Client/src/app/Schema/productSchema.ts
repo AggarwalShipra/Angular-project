@@ -10,7 +10,8 @@ export class Product
     rom:number;
     memory:number;
     front_camera:number;
-    back_camera:number
+    back_camera:number;
+    operating_system:string;
     battery:string;
     battery_type:boolean;
     two_g:boolean;
@@ -21,5 +22,9 @@ export class Product
     music:boolean;
     video:boolean;
     fm:boolean;
+    sim_type:string;
+    color:string;
+    price:number;
+    warranty:string;
     desc:string;
 }

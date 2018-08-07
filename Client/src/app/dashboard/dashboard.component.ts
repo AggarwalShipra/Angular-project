@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Schema/productSchema';
+import { ProductService } from '../Services/product.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,27 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  mobile_data:{
-    image:String,
-    model_name:String,
-    price:Number
-  }[];
-  constructor() { }
+  product:Product[];
+  constructor(private productService:ProductService,private route:Router) { }
 
   ngOnInit() {
-    this.mobile_data=[
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000},
-      {image:'../../assets/images/mobile1.jpg',model_name:'sss',price:5000}];
+    this.productService.getProduct().subscribe((data)=>{
+      if(data.length<=10)
+      this.product=data;
+      else if(data.length>10)
+      {
+        this.product= data.sort(() => .5 - Math.random()).slice(0,10);
+      }
+    })
+  }
+  getItem(id:String)
+  {
+    this.route.navigate(['/product',id]);
   }
 
 }

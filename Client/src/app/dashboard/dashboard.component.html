@@ -1,14 +1,12 @@
 <div class="container">
   <div class="d-flex flex-row">
-    <a href="#" class="card col-3 col-sm-3 col-md-2 col-lg-2" *ngFor="let mobile of mobile_data">
-      
+    <a role="button" class="card col-3 col-sm-3 col-md-2 col-lg-2" *ngFor="let mobile of product" (click)="getItem(mobile._id)"> 
       <span class='dash-image'>
         <img class="card-img-top" src={{mobile.image}} alt="Card image cap">
       </span>
       <div class="card-body">
         <!-- <h6 class="card-title">Mobile Handset 1</h6> -->
-        <div class="card-text">{{mobile.model_name}}zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-          zzzzzzzzzzzzzzz
+        <div class="card-text">{{mobile.model_name}}
         </div>
         <p><span class="from-tag">From<br></span>
           <strong>Rs. {{mobile.price}}</strong>

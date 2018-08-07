@@ -12,6 +12,6 @@ export class User
         pincode:number
     };
     bought:string;
-    interested:string;
+    interestedIn:string;
     valid:boolean;
 }

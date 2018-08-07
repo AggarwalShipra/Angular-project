@@ -17,14 +17,15 @@
     height: auto;
     max-height: 200px;
 }
-.navbar-text a{
+.navbar-right li a{
     color:rgba(255,255,255,.5);
+    cursor: pointer;
 }
 
-.navbar-text a:hover{
+.navbar-right li a:hover{
     color:rgba(255,255,255,.8);
 }
 
-.navbar-text a:active{
+.navbar-right li a:active{
     color:rgba(255,255,255);
 }

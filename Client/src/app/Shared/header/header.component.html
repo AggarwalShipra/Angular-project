@@ -15,7 +15,10 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/about">About</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+      <!-- <li class="nav-item dropdown">
         <span class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
           style="cursor: pointer;">
           Categories
@@ -25,12 +28,35 @@
             <strong>{{x}}</strong>
           </a>
         </div>
+      </li> -->
+    </ul>
+    <!-- <span class="navbar-text"> -->
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="!userService.loggedIn()">
+        <a class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#LoginSignupModal">
+          <i class="fa fa-lg fa-smile-o" aria-hidden="true"></i>Login/Signup</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="userService.loggedIn() && userService.isAdmin()">
+          <a class="nav-anchor" routerLink="/admin"> <i class="fa fa-columns" aria-hidden="true"></i>Admin Dashboard </a>
+        </li>
+      <li routerLinkActive="active" *ngIf="userService.loggedIn() && !userService.isAdmin()">
+        <a class="nav-anchor" routerLink="/profile"> <i class="fa fa-user" aria-hidden="true"></i>Profile </a>
+      </li>
+      <li routerLinkActive="active" *ngIf="userService.loggedIn() && !userService.isAdmin()">
+        <a class="nav-anchor" routerLink="/cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart </a>
+      </li>
+      <li routerLinkActive="active" *ngIf="userService.loggedIn() && !userService.isAdmin()">
+          <a class="nav-anchor" routerLink="/order">
+            <i class="fa fa-book" aria-hidden="true"></i>My Orders</a>
+        </li>
+      <li *ngIf="userService.loggedIn()">
+        <a role="button" (click)="onLogout()" routerLink="/" class="nav-anchor">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
       </li>
     </ul>
-    <span class="navbar-text">
-      <a href="#" class="nav-anchor" data-toggle="modal" data-focus="true" data-keyboard="true" data-target="#LoginSignupModal">
-          <i class="fa fa-lg fa-smile-o" aria-hidden="true"></i>Login/Signup</a>
-    </span>
+
+    <!-- </span> -->
   </div>
 </nav>
 <app-login-signup></app-login-signup>

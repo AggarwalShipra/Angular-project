@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../Schema/productSchema';
+import { ProductService } from '../../Services/product.service';
+import { Router } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-product-dashboard',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-dashboard.component.css']
 })
 export class ProductDashboardComponent implements OnInit {
-
-  constructor() { }
+  products:Product[]
+  constructor(private productService:ProductService,
+    private route:Router) { }
 
   ngOnInit() {
+    this.productService.getProduct().subscribe((data:Product[])=>{
+      this.products=data;
+    })
   }
-
+  getItem(id:String)
+  {
+    this.route.navigate(['/product',id]);
+  }
 }

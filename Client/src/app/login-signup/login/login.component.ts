@@ -26,25 +26,30 @@ export class LoginComponent implements OnInit {
   }
   onSubmit()
   {
-    this.user.email=this.loginForm.get('email').value;
-    this.user.password=this.loginForm.get('password').value;
-    this.userService.authenticate(this.user.email,this.user.password)
-    .subscribe((data)=>{
-      if(data)
-      {
-        jQuery("#LoginSignupModal").modal("hide");
-        alert('Succesful Login');
-        this.loginForm.reset();  
-      }
-      else if(!data)
-      {
-        this.haveError=true;
-        this.error='* Invalid email or password Entered';
-        this.loginForm.get('password').setValue('');
-      }
-    });
-    // console.log(this.loginForm);
-    
+    if(this.loginForm.valid)
+    {
+      this.user.email=this.loginForm.get('email').value;
+      this.user.password=this.loginForm.get('password').value;
+      this.userService.authenticate(this.user)
+      .subscribe((data)=>{
+        if(data.success)
+        {
+          this.userService.storeUserData(data.token,data.user);
+          jQuery("#LoginSignupModal").modal("hide");
+          alert('Succesful Login');
+          this.loginForm.reset();  
+        }
+        else if(!data.success)
+        {
+          this.haveError=true;
+          this.error='* '+data.msg;
+          if(data.msg=="Wrong password")
+          this.loginForm.get('password').setValue('');
+          else if(data.msg=="user not found")
+          this.loginForm.reset();
+        }
+      });
+    }
   }
 
 }

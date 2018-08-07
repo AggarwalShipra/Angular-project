@@ -1,0 +1,22 @@
+h6{
+    width: 100%;
+    max-width:200px;
+    margin: 10px auto;
+}
+
+.myimage
+{
+    width: auto;
+    max-width: 90%;
+    height: auto;
+}
+.row{
+    margin-top: 15px;
+    margin-bottom:15px; 
+}
+.container{
+    text-align: center;
+}
+table{
+    text-align: left;
+}

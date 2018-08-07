@@ -1,65 +1,21 @@
 <div class="container">
   <h6 id="top-heading">Showing All mobile of company</h6>
   <div class="row">
-    <a href="#" class=" column col-6 col-sm-4 col-md-4 col-lg-3">
-      <div class="card">
-        <img class="card-img-top img-responsive" src="../../assets/images/mobile1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" title="Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model">Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Color and Memory</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 5000</p>
-        </div>
-      </div>
-    </a>
-    <a href="#" class=" column col-6 col-sm-4 col-md-4 col-lg-3">
-      <div class="card">
-        <img class="card-img-top img-responsive" src="../../assets/images/mobile1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" title="Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model">Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Color and Memory</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 5000</p>
-        </div>
-      </div>
-    </a>
-    <a href="#" class=" column col-6 col-sm-4 col-md-4 col-lg-3">
-      <div class="card">
-        <img class="card-img-top img-responsive" src="../../assets/images/mobile1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" title="Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model">Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Color and Memory</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 5000</p>
-        </div>
-      </div>
-    </a>
-    <a href="#" class=" column col-6 col-sm-4 col-md-4 col-lg-3">
-      <div class="card">
-        <img class="card-img-top img-responsive" src="../../assets/images/mobile1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" title="Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model">Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Color and Memory</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 5000</p>
-        </div>
-      </div>
-    </a>
-    <a href="#" class=" column col-6 col-sm-4 col-md-4 col-lg-3">
-      <div class="card">
-        <img class="card-img-top img-responsive" src="../../assets/images/mobile1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" title="Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model">Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Color and Memory</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 5000</p>
-        </div>
-      </div>
-    </a>
-    <a href="#" class=" column col-6 col-sm-4 col-md-4 col-lg-3">
-      <div class="card">
-        <img class="card-img-top img-responsive" src="../../assets/images/mobile1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" title="Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model">Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model Motto Mobile Model</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Color and Memory</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 5000</p>
-        </div>
-      </div>
-    </a>
+    <!-- <div > -->
+        <a *ngFor="let product of products" role="button" (click)="getItem(product._id)" class=" column d-flex col-6 col-sm-4 col-md-4 col-lg-3">
+            <div class="card">
+              <div class="card-layout">
+                  <img class="card-img-top img-responsive" [src]="product.image" alt="{{product.model_name}}">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" title="{{product.model_name}}">{{product.company}} {{product.model_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{product.color}} {{product.ram}}GB</h6>
+                <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i>{{product.price}}
+                  <small><small>Inclusive all tax</small></small>
+                </p>
+              </div>
+            </div>
+          </a>
+    <!-- </div> -->
   </div>
 </div>

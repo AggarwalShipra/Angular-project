@@ -12,13 +12,19 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductDashboardComponent } from './product/product-dashboard/product-dashboard.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-import { ProductDetail2Component } from './product/product-detail2/product-detail2.component';
 import { UserService } from './Services/user.service';
 import { AdminComponent } from './admin/admin.component';
 import { AddProductComponent } from './admin/add-product/add-product.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductDetail1Component } from './product/product-detail1/product-detail1.component';
+import { ProductDetail2Component } from './product/product-detail2/product-detail2.component';
+import { ProductDashboardComponent } from './product/product-dashboard/product-dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PathGuard } from './Guards/path-guard.service';
+import {AdminGuardService} from './Guards/admin-guard.service';
+import { CartComponent } from './profile/cart/cart.component';
+import { OrdersComponent } from './profile/orders/orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +37,15 @@ import { AppRoutingModule } from './app-routing.module';
     HeaderComponent,
     AboutComponent,
     DashboardComponent,
-    ProductDashboardComponent,
-    ProductDetailComponent,
-    ProductDetail2Component,
     AdminComponent,
-    AddProductComponent
+    AddProductComponent,
+    ProductDetail1Component,
+    ProductDetail2Component,
+    ProductDashboardComponent,
+    PageNotFoundComponent,
+    ProfileComponent,
+    CartComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,7 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
   AppRoutingModule],
-  providers: [UserService],
+  providers: [UserService,PathGuard,AdminGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

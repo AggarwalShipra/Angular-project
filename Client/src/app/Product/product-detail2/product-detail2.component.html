@@ -1,73 +1,349 @@
-<div class="bottom-part">
-    <div class="row">
-      <div class="col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
-        <div class="details">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-overview-tab" data-toggle="tab" href="#nav-overview" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</a>
-                  <a class="nav-item nav-link" id="nav-warranty-tab" data-toggle="tab" href="#nav-warranty" role="tab" aria-controls="nav-warranty" aria-selected="false">Warranty Details</a>
+<div class="bottom-part" *ngIf="product">
+  <div class="row">
+    <div class="col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
+      <div class="details">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-overview-tab" data-toggle="tab" href="#nav-overview" role="tab" aria-controls="nav-overview"
+              aria-selected="true">Overview</a>
+            <a class="nav-item nav-link" id="nav-warranty-tab" data-toggle="tab" href="#nav-warranty" role="tab" aria-controls="nav-warranty"
+              aria-selected="false">Warranty Details</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane  show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseGeneral" aria-expanded="false" aria-controls="collapseGeneral">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>General</h5>
+              </a>
+              <div id="collapseGeneral" class="collapse" aria-labelledby="General" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Brand</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.company}}</h6>
+                    </div>
+                  </div>
                 </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane  show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
-                    <div class="sub-detail-heading">
-                        <a role="button" 
-                        data-toggle="collapse" 
-                        data-target="#collapseGeneral" 
-                        aria-expanded="false" 
-                        aria-controls="collapseGeneral">
-                        <h5 class="detail-heading"><i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>General</h5>
-                    </a>
-                    <div id="collapseGeneral" class="collapse" aria-labelledby="General" data-parent="#accordion">
-                        <div class="sub-detail">
-                            <div class="row">
-                              <div class="col-6 col-sm-6">
-                                <h6>Subheading1</h6>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <h6>Value1</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sub-detail">
-                            <div class="row">
-                              <div class="col-6 col-sm-6">
-                                <h6>Subheading1</h6>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <h6>Value1</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sub-detail">
-                            <div class="row">
-                              <div class="col-6 col-sm-6">
-                                <h6>Subheading1</h6>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <h6>Value1</h6>
-                              </div>
-                            </div>
-                          </div>
-                      </div>  
-                      </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Model</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.model_name}}</h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="tab-pane " id="nav-warranty" role="tabpanel" aria-labelledby="nav-warranty-tab">
-                    <div class="sub-detail-heading">
-                        <h5 class="detail-heading">Warranty Details</h5>
-                        <div class="sub-detail">
-                          <div class="row">
-                            <div class="col-6 col-sm-6">
-                              <h6>Warranty</h6>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <h6>Value1</h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Product Code</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product._id}}</h6>
+                    </div>
+                  </div>
                 </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Screen Size</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.screen_size}}</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>RAM</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.ram}} GB</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Color</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.color}}</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Camer Filter</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.front_camera}}-{{product.back_camera}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseMemory" aria-expanded="false" aria-controls="collapseMemory">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Memory</h5>
+              </a>
+              <div id="collapseMemory" class="collapse" aria-labelledby="Memory" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Internal Memory</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.rom}} GB</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Expandatble upto</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.memory}} GB</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseBattery" aria-expanded="false" aria-controls="collapseBattery">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Battery</h5>
+              </a>
+              <div id="collapseBattery" class="collapse" aria-labelledby="Battery" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Battery Size/Type</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.battery}}</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Removable Battery</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.battery_type===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseCamera" aria-expanded="false" aria-controls="collapseCamera">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Camera</h5>
+              </a>
+              <div id="collapseCamera" class="collapse" aria-labelledby="Camera" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Primary Camera</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.back_camera}} MP</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Secondary Camera</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.front_camera}} MP</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseConnect" aria-expanded="false" aria-controls="collapseConnect">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Internet and Connectivity</h5>
+              </a>
+              <div id="collapseConnect" class="collapse" aria-labelledby="Connectivity" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>2G</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.two_g===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>3G</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.three_g===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>4G</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.four_g===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Wifi</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.wifi===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>USB</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.usb===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseMedia" aria-expanded="false" aria-controls="collapseMedia">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Multimedia</h5>
+              </a>
+              <div id="collapseMedia" class="collapse" aria-labelledby="Connectivity" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Video</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.video===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Music</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.music===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>FM radio</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>{{product.fm===true?'Yes':'No'}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseBox" aria-expanded="false" aria-controls="collapseBox">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Package Details</h5>
+              </a>
+              <div id="collapseBox" class="collapse" aria-labelledby="Box" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>In Sale Package</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>
+                        1 Pc. of each Main Unit, User Mannual, Warranty Card, Charger, and Head Set.
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane " id="nav-warranty" role="tabpanel" aria-labelledby="nav-warranty-tab">
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseWarranty" aria-expanded="false" aria-controls="collapseWarranty">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Warranty Detail</h5>
+              </a>
+              <div id="collapseWarranty" class="collapse" aria-labelledby="Box" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>Warranty</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>
+                       {{product.warranty}} years Manfacturer warranty.
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-detail-heading">
+              <a role="button" data-toggle="collapse" data-target="#collapseReturn" aria-expanded="false" aria-controls="collapseReturn">
+                <h5 class="detail-heading">
+                  <i class="fa" [ngClass]="{'fa-chevron-down':false,'fa-chevron-up':true}" aria-hidden="true"></i>Return Policy</h5>
+              </a>
+              <div id="collapseReturn" class="collapse" aria-labelledby="Box" data-parent="#accordion">
+                <div class="sub-detail">
+                  <div class="row">
+                    <div class="col-6 col-sm-6">
+                      <h6>10 day Return Policy</h6>
+                    </div>
+                    <div class="col-6 col-sm-6">
+                      <h6>
+                       Product is liable for return within 10 days from date of delievery in case wrong or damaged product is delievered.Cancellation not allowed.
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>

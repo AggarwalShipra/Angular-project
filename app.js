@@ -4,19 +4,19 @@ var express=require('express');
 var mongoose=require('mongoose');
 var bodyParser=require('body-parser');
 var cors=require('cors');
+var passport=require('passport');
 var path=require('path');
-
+const config=require('./config/database')
 var app=express();
 
 const route=require("./routes/route");
 const productroute=require("./routes/productroute")
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017/MobileZone');
+mongoose.connect(config.database);
 //on Successful Connection
 mongoose.connection.on('connected',()=>{
-    console.log('Connected to database @ 27017');
+    console.log('Connected to database @ 27017 '+config.database);
 })
-
 //on connection error
 mongoose.connection.on("error",(err)=>{
     if(err)
@@ -31,7 +31,11 @@ const port=3000;
 //adding middleware
 app.use(cors());
 app.use(bodyParser.json());
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
+require("./config/passport")(passport);
 //static files
 app.use(express.static(path.join(__dirname,'public')));
 //routes

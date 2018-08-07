@@ -1,0 +1,69 @@
+<div class="container-fluid" *ngIf="product">
+  <div class="top-part">
+    <div class="row">
+      <div class="image-column col-12 col-sm-5 col-md-4">
+        <img class="img-fluid" [src]="product.image" alt="{{product.model_name}}">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-6">
+            <button class="btn btn-buy" (click)="addOrder()">Buy Now for {{product.price}}</button>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6">
+            <button class="btn btn-buy" (click)="addCart()" [disabled]="showCart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-7 col-md-8 detail-column">
+        <h4>
+          {{product.company}} {{product.model_name}}
+        </h4>
+        <h5>
+          {{product.price}}
+          <br>
+          <small>Including Taxes</small>
+        </h5>
+        <h6 class="heading">HighLights</h6>
+        <ul>
+          <li>Screen Size : {{product.screen_size}} inches
+          </li>
+          <li>Camera: "{{product.back_camera}} MP Rear/{{product.front_camera}} MP Front
+          </li>
+          <li>
+            RAM/ROM : {{product.ram}} GB/{{product.rom}} GB
+          </li>
+          <li>Operating System :{{product.operating_system}}
+          </li>
+          <li>Sim Type : {{product.sim_type}}
+          </li>
+          <li>10 Days Replacement Policy</li>
+          <li>Warranty : {{product.warranty}}
+          </li>
+          <li>In case of EMI payments, Cashback will be credited post return period.</li>
+        </ul>
+        <h6 class="heading">Seller</h6>
+        <h6>MobileZone</h6>
+        <h6 class="heading">Description</h6>
+        <h6 *ngIf="product.desc">{{product.desc}}</h6>
+        <h6 *ngIf="!product.desc">Best Seller Product</h6>
+        <h6 class="heading">Service</h6>
+        <h6>Cash on Delievery</h6>
+      </div>
+    </div>
+  </div>
+  <app-product-detail2></app-product-detail2>
+</div>
+<div class="container-fluid" *ngIf="!product">
+  <div class="row">
+    <div class="col-6">
+      <img src="../../../assets/images/productNotFound.png" alt="Product not found">
+    </div>
+    <div class="col-6 text">
+      <h2 id="Seem's like we are Lost">
+       Seems Like We are Lost!!
+      </h2>
+      <h4 id="sorry">
+       No Such Product Found
+      </h4>
+        <button type="button" class="btn btn-primary btn-back" (click)="home()"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Continue Shopping</button>
+    </div>    
+  </div>
+</div>

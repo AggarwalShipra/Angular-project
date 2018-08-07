@@ -1,0 +1,48 @@
+.row
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom:15px;
+    border: none;
+    border-radius: 20px;
+}
+.row:hover{
+    border:1px solid #ccc;
+}
+.head
+{
+    width: 100%;
+    min-width: auto;
+    margin: 5px auto;
+}
+.myImage{
+    max-width: 60px;
+    width: auto;
+    height: auto;
+    max-height: 100px;
+}
+.container{
+    font-family: "Verdana, Geneva, Tahoma, sans-serif"
+}
+.custom{
+    text-align: center;
+    margin: 20px auto;
+}
+.btn-buy
+{
+    width:auto;
+    text-align: center;
+    background-color: orange;
+    color: white;
+    border-color:orange; 
+    border-radius:5px;
+    margin: 5px auto;
+    margin-left: 2px;
+}
+.btn-buy:hover{
+    background-color: rgba(214, 150, 32, 0.85);
+}
+.myDiv{
+    cursor: pointer;
+}

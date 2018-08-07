@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../Services/main.service';
-
+import { UserService } from '../../Services/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,12 +7,14 @@ import { MainService } from '../../Services/main.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private mainService:MainService) { }
+  constructor(private userService:UserService) { }
 
   ngOnInit() {
+    // console.log('header');
   }
-  setDiv(value:boolean)
+  onLogout()
   {
-      this.mainService.showLogInSignUp=value;
+    this.userService.logout();
+    alert("User Successfully Logged out")
   }
 }

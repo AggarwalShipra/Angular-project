@@ -1,0 +1,17 @@
+<div class="container">
+  <h5 class="head">Dear {{user.first_name}} you are interested in following items</h5>
+  <div class="custom"*ngIf="product.length==0">
+      <h4>Your Cart is Empty</h4>
+      <button class="btn btn-primary btn-buy" (click)="shop()">Go and Shop Now</button>
+    </div>
+  <div class="row myDiv" *ngFor="let x of product" (click)="open(x._id)">
+    <div class="col-4 col-sm-4 col-md-3">
+      <img class="myImage" [src]="x.image" alt="mobile set">
+    </div>
+    <div class="col-8 col-sm-8 col-md-9">
+      <h5>{{x.company}} {{x.model_name}}</h5>
+      <h6>Price Rs. {{x.price}}</h6>
+      <h6>{{x.ram}} GB/ {{x.rom}} GB</h6>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container" *ngIf="user">
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="myimage" src="../../assets/images/user.png" alt="User Logo">
+        </div>
+        <div class="col-sm-8">
+            <h6>Personal Info</h6>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>{{user.first_name}} {{user.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>{{user.email}}</td>
+                    </tr>
+                    <tr *ngFor="let address of user.address;let i of index">
+                        <th scope="row">Address {{i+1}}</th>
+                        <td>{{address}}</td>
+                    </tr>
+                    <tr *ngIf="user.address.length==0">
+                        <th>Address</th>
+                        <td>-------</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

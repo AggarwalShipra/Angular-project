@@ -22,6 +22,11 @@ const ProductSchema=mongoose.Schema({
     music:{type:Boolean,required:true},
     video:{type:Boolean,required:true},
     fm:{type:Boolean,required:true},
-    desc:{type:String,required:false,default:''}
+    color:{type:String,required:true},
+    price:{type:Number,required:true},
+    desc:{type:String,required:false,default:''},
+    operating_system:{type:String,required:true},
+    sim_type:{type:String,required:true},
+    warranty:{type:String,required:true}
 });
 const Product=module.exports=mongoose.model('Product',ProductSchema);

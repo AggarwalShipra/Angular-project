@@ -7,9 +7,19 @@ router.get('/getProduct', (req, res, next) => {
     Product.find((err, product) => {
         if (err)
             return res.status(500).send(err);
-        return res.status(200).send(product);
+            return res.status(200).send(product);
     })
 });
+
+//method for retrieving data for particular id when clicked
+router.get('/getItem/:id',(req,res,next)=>{
+    // console.log(req.params.id);
+    Product.findById(req.params.id,(err,product)=>{
+        if(err)
+            return res.status(500).send(err);
+            return res.status(200).send(product);
+    });
+})
 //method to post 
 router.post('/addProduct', (req, res, next) => {
     let newProduct = new Product({
@@ -33,11 +43,18 @@ router.post('/addProduct', (req, res, next) => {
         music: req.body.music,
         video: req.body.video,
         fm: req.body.fm,
-        desc: req.body.desc
+        color:req.body.color,
+        price:req.body.price,
+        desc: req.body.desc,
+        warranty:req.body.warranty,
+        sim_type:req.body.sim_type,
+        operating_system:req.body.operating_system
     })
     newProduct.save((err, product) => {
-        if (err)
+        if (err){
+            console.log(err);
             return res.status(500).send(err);
+        }
             return res.status(200).send(product);
     })
 });

@@ -36,8 +36,12 @@ h6{
     border-bottom: 1px dashed #ccc;
     padding:5px 0;
 }
+.sub-detail h6{
+    font-size: 0.8rem !important;
+}
 .detail-heading
 {
     border-bottom: 1px dashed #ccc;
+    font-size: 1rem;
     padding: 5px 0;
 }

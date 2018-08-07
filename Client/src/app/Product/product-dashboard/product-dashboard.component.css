@@ -4,19 +4,28 @@ a{
 }
 .container
 {
-    margin-top: 10px; 
+    margin-top: 10px;
+    margin-bottom: 10px; 
 }
 .card{
+    width: 100%;
     border-radius: 0;
+    border:none;
 }
 .card:hover{
+    border:1px solid rgba(0,0,0,.125);
     box-shadow: 1px 1px 1px 1px #ccc; 
 }
 .card-img-top
 {
-    width: 50%;
-    height: 50%;
-    margin: 0 auto;
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 90%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
 }
 .card-title
   {
@@ -36,4 +45,10 @@ a{
       margin-left: -15px;
       margin-bottom: 20px;
       color: rgb(102, 99, 99);
+  }
+  .card-layout{
+    text-align: center;
+    min-height: 170px;
+    position: relative;
+    padding-bottom: 100%;
   }

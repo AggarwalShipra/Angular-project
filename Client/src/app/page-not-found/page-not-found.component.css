@@ -1,0 +1,35 @@
+.text
+{   
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 0;
+    color: white;
+    font-family: "Verdana, Geneva, Tahoma, sans-serif"
+}
+.logo
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+.container-fluid{
+position: relative;
+width: 100%;
+background-color: rgb(129, 129, 129);
+}
+.btn-buy
+{
+    font-size: 20px;
+    background-color: orange;
+    border-color: rgb(172, 112, 2);
+    border-radius: 20px;
+}
+.btn-buy:hover
+{
+    background-color: rgb(206, 147, 36);
+}
+.fa{
+    padding-right: 10px;
+    padding-left: 10px;
+}
